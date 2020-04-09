@@ -73,21 +73,21 @@
                     
 
                     if (result.slice(-2, -1) == "n") {
-                        userScore = userScore+1;
-                        roundNumber = roundNumber+1;
-                        console.log("Computer: " +compScore);
+                        ++userScore; //= userScore+1;
+                        ++roundNumber; //= roundNumber+1;
+                        console.log("Computer: " + compScore);
                         console.log("You: " + userScore);
                     }
 
                     else if (result.slice(-2, -1) == "e") {
-                        compScore = compScore+1;
-                        roundNumber = roundNumber+1;
-                        console.log("Computer: " +compScore);
+                        ++compScore // = compScore+1;
+                        ++roundNumber; // = roundNumber+1;
+                        console.log("Computer: " + compScore);
                         console.log("You: " + userScore);
 
                     }
                     else {
-                        console.log("Computer: " +compScore);
+                        console.log("Computer: " + compScore);
                         console.log("You: " + userScore);
 
                     }
