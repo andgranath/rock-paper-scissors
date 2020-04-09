@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+
+            function computerPlay() {
+                choices = ["Rock", "Paper", "Scissors"];
+                min = Math.ceil(0);
+                max = Math.floor(3);
+                choice = Math.floor(Math.random() * (max - min)) + min;
+
+                return choices[choice];
+
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection.toLowerCase() == "rock") {
+                    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+                        return("You chose the same! Play again.");
+                    }
+                    else if (computerSelection == "Paper") {
+                        return ("Paper beats rock. You lose!");
+                    }
+
+                    else {
+                        return ("Rock beats scissors. You win!")
+                    }
+                }
+
+                else if (playerSelection.toLowerCase() == "paper") {
+                    if (computerSelection.toLowerCase() == playerSelection.toLowerCase()) {
+                        return ("You chose the same! Play again.");
+                    }
+
+                    else if (computerSelection == "Rock") {
+                        return ("Paper beats rock. You win!");
+                    }
+
+                    else {
+                        return ("Scissors beat paper. You lose!");
+                    }
+                }
+
+                else if (playerSelection.toLowerCase() == "scissors") {
+
+                    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+                        return ("You chose the same. Play again!")
+                    }
+
+                    else if (computerSelection == "Rock") {
+                        return ("Rock beat scissors. You lose!")
+                    }
+
+                    else {
+                        return ("Scissors beat paper. You win!")
+                    }
+
+                    }
+                }
+            
+            function game() {
+                let compScore = 0;
+                let userScore = 0;
+                roundNumber = 1;
+
+                while (roundNumber <=5) {
+                    userChoice = prompt("Round " + roundNumber + ". Choose Rock, Paper or Scissors: ");
+                    let result = playRound(userChoice, computerPlay());
+                    console.log(result);
+                    
+
+                    if (result.slice(-2, -1) == "n") {
+                        userScore = userScore+1;
+                        roundNumber = roundNumber+1;
+                        console.log("Computer: " +compScore);
+                        console.log("You: " + userScore);
+                    }
+
+                    else if (result.slice(-2, -1) == "e") {
+                        compScore = compScore+1;
+                        roundNumber = roundNumber+1;
+                        console.log("Computer: " +compScore);
+                        console.log("You: " + userScore);
+
+                    }
+                    else {
+                        console.log("Computer: " +compScore);
+                        console.log("You: " + userScore);
+
+                    }
+                    
+                }
+
+                if (userScore > compScore) {
+                    console.log("Congratulations, you won!");
+                }
+
+                else if (userScore == compScore) {
+                    console.log("Well fought, but it was a draw.");
+                }
+                else {
+                    console.log("Darnit, you lost to a randomized computer!")
+                }
+            }
+
+            
+
+            //const playerSelection = "rock";
+            //const computerSelection = computerPlay()
+            //console.log(playRound(playerSelection, computerSelection))
+        </script>
+    </body>
+</html>
