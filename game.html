@@ -19,7 +19,7 @@
             function playRound(playerSelection, computerSelection) {
                 if (playerSelection.toLowerCase() == "rock") {
                     if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-                        return("You chose the same! Play again.");
+                        return("You chose the same! Draw.");
                     }
                     else if (computerSelection == "Paper") {
                         return ("Paper beats rock. You lose!");
@@ -32,7 +32,7 @@
 
                 else if (playerSelection.toLowerCase() == "paper") {
                     if (computerSelection.toLowerCase() == playerSelection.toLowerCase()) {
-                        return ("You chose the same! Play again.");
+                        return ("You chose the same! Draw.");
                     }
 
                     else if (computerSelection == "Rock") {
@@ -98,9 +98,7 @@
                     console.log("Congratulations, you won!");
                 }
 
-                else if (userScore == compScore) {
-                    console.log("Well fought, but it was a draw.");
-                }
+                
                 else {
                     console.log("Darnit, you lost to a randomized computer!")
                 }
